@@ -1,0 +1,71 @@
+.left{
+    width:80vw;
+}
+.mini{
+    height: 15vh;
+}
+.medium{
+    height: 70.3vh;
+    margin: 0;
+}
+.horizontal{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+/*Just imported old CSS below here*/
+nav, footer, nav a, footer a , button{
+    background-color: #133854;
+    color: white;
+    font-size: 3vh;
+}
+
+nav {
+    text-align: center;
+    padding: 1vh;
+}
+footer {
+    text-align: right;
+    width:100%;
+    position: relative;
+    bottom:0;
+    font-size: 1.75vh;
+}
+
+address {
+    font-style: normal;
+}
+.absolute{
+    position: absolute;
+    right:30%;
+}
+.mainText{
+    font-size: 3vh;
+}
+.Bordered{
+    border: black 2px solid;
+    background-color: black;
+    font-size: 2.5vh;
+    text-align: center;
+    width:80vw;
+}
+footer img{
+    height:8vh;
+    padding-right: 2vw;
+}
+li{
+    font-weight: normal;
+}
+body{
+    margin: 0;
+    overflow: hidden;
+}
+
+.rFloat{
+    float:right;
+    padding:0 0 20px 20px;
+}
+.lFloat{
+    float:left;
+    padding:0 20px 20px 0;
+}
