@@ -26,14 +26,33 @@
 
     <div class="horizontal">
         <section class="left">
-            <form><!--Create our form wrapper-->
+            <h1>Cat Intake Form</h1>
+            <form method="get" action="index.html" onsubmit="return attemptSubmission()"><!--Create our form wrapper, table because that's such a weird layout to try and duplicate-->
                 <table>
-                    <tr><td colspan="7">Name of Cat</td><td></td><td colspan="3">Age of Cat</td><td colspan="2">Temperament of Cat</td></tr>
-                    <tr><td colspan="7"><input id="name"></td><td colspan="3"><input id="age"></td><td rowspan="7" colspan="2"></td></tr>
-                    <tr><td colspan="7">Days Needed</td></tr>
+                    <tr><td colspan="6"><span>Name of Cat</span></td><td colspan="2"></td><td colspan="2"><span>Age of Cat</span></td><td colspan="2"><span>Temperament of Cat</span></td></tr>
+                    <tr><td colspan="7"><input id="name" type="text" placeholder="Mr. Whiskers" name="catName"></td><td class="spacer"></td><td colspan="1"><input type="number" id="age" placeholder="2" name="age"></td></td><td class="spacer"></td><td rowspan="7" colspan="2"><div class="bordered">
+                        <input type="radio" value="F" name="Temperament" onchange="displayTerritorial(this)" checked><span>Friendly</span><br><input type="radio" value="S" name="Temperament" onchange="displayTerritorial(this)"><span>Sleepy</span><br><input type="radio" value="I" name="Temperament" onchange="displayTerritorial(this)"><span>Independent</span><br><input type="radio" value="T" name="Temperament" onchange="displayTerritorial(this)" id="isTerri"><span>Territorial</span><br><span id="tSpan" class="hiddenDefault">Describe Territorial</span><br><input type="text" id="TemperDesc" class="hiddenDefault"></div>
+                    </td></tr>
+                    <tr><td colspan="7"><span>Days Needed</span></td></tr>
                     <tr><td>Mon.</td><td>Tue.</td><td>Wed.</td><td>Thu.</td><td>Fri.</td><td>Sat.</td><td>Sun.</td></tr>
-                    <tr><td><input id="mon" type="checkbox"></td><td><input id="tue" type="checkbox"></td><td><input id="wed" type="checkbox"></td><td><input id="thu" type="checkbox"></td><td><input id="fri" type="checkbox"></td><td><input id="sat" type="checkbox"></td><td><input id="sun" type="checkbox"></td></tr>
-
+                    <tr><td><input id="mon" type="checkbox" value="mon" name="day"></td><td><input id="tue" type="checkbox" value="tue" name="day"></td><td><input id="wed" type="checkbox" value="wed" name="day"></td><td><input id="thu" type="checkbox" value="thu" name="day"></td><td><input id="fri" type="checkbox" value="fri" name="day"></td><td><input id="sat" type="checkbox" disabled name="day" value="sat"></td><td><input id="sun" type="checkbox" disabled name="day" value="sun"></td></tr>
+                    <tr><td colspan="4"><span>Time Arrive</span></td><td colspan="4"><span>Time Leave</span></td></tr>
+                    <tr><td colspan="4" class="fit"><input type="time" id="arrival" name="arrival"></td><td colspan="4" class="fit"><input type="time" id="leave" name="leave"></td></tr>
+                    <tr><td colspan="9"><input id="neuter" type="checkbox" name="neuter"> <span>Cat Spayed/Neutered</span></td></tr>
+                    <tr><td colspan="9"><input id="diet" type="checkbox" onchange="displayDiet(this)" value="D" name="diet"> <span>Special Diet</span></td></tr>
+                    <tr><td colspan="7"><span id="dSpan"  class="hiddenDefault">Describe Diet:</span></td></tr>
+                    <tr><td colspan="7"><input type="text" placeholder="Mr. Whiskers eats only live mice." id="dietD"  class="hiddenDefault" name="dietDesc"></td></tr>
+                    <tr><td class="vertSpacer" colspan="5"></td></tr>
+                    <tr><td colspan="9"><span>Owner's Name:</span></td><td></td><td colspan="4"><span>Emergency Contact Name:</span></td></tr>
+                    <tr><td colspan="9"><input type="text" placeholder="Cat Owner" id="owner" name="owner"></td><td></td><td colspan="4"><input type="text" placeholder="Cat Friend" id="emerg" name="emergcontact"></td></tr>
+                    <tr><td colspan="9"><span>Daytime Phone:</span></td><td></td><td colspan="4"><span>Emergency Contact Phone:</span></td></tr>
+                    <tr><td colspan="9"><input type="tel" placeholder="(123) 456-7890" id="phone" onchange="phoneValidator(this)" name="phone"></td><td></td><td colspan="4"><input type="tel" placeholder="(123) 456-7890" id="emergP" onchange="phoneValidator(this)" name="emergphone"></td></tr>
+                    <tr><td colspan="7"><span>Cell Phone:</span></td></tr>
+                    <tr><td colspan="7"><input type="tel" placeholder="(123) 456-7890" id="cell" onchange="phoneValidator(this)" name="cell"></td></tr>
+                    <tr><td colspan="7"><span>Email:</span></td></tr>
+                    <tr><td colspan="7"><input type="email" placeholder="catowner@fluffy.com" id="email" onchange="emailValidator(this)" name="email"></td></tr>
+                    <tr><td class="vertSpacer" colspan="5"></td></tr>
+                    <tr><td colspan="3"><input type="submit" class="button"></td></tr>
                 </table>
                 
             </form>
